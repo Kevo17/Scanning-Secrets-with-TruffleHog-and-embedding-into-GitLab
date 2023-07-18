@@ -21,35 +21,50 @@ During this lab, participants will gain practical experience in integrating Truf
 
 <h2>Program walk-through:</h2>
 
+Let’s install the TruffleHog tool on the system to scan for the secrets in our code: <br/>
+```
+wget https://github.com/trufflesecurity/trufflehog/releases/download/v3.28.0/trufflehog_3.28.0_linux_amd64.tar.gz
+tar -xvf trufflehog_3.28.0_linux_amd64.tar.gz
+chmod +x trufflehog
+mv trufflehog /usr/local/bin/
+```
+<br/>
+ 
 <p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/rJHhGy8.png" height="80%" width="80%" alt="Disk Sanitization Step"/>
 </p>
 
+<br />
+<br />
+
+Let’s explore what options Trufflehog provides us: <br/>
+```
+trufflehog --help
+```
+<br/>
+ 
+<p align="center">
+<img src="https://i.imgur.com/jOohX1Z.png" height="80%" width="80%" alt="Disk Sanitization Step"/>
+</p>
+
+<br />
+<br />
+
+Let’s run the scan on the django.nv project: <br/>
+```
+trufflehog git https://gitlab.practical-devsecops.training/pdso/django.nv --json | tee secret.json
+```
+<br/>
+ 
+<p align="center">
+<img src="https://i.imgur.com/ViyDtY1.png" height="80%" width="80%" alt="Disk Sanitization Step"/>
+</p>
+
+<br />
+<br />
+
+<img src="https://i.imgur.com/Ev8n2Gh.png" height="80%" width="80%" alt="Disk Sanitization Step"/>
+<img src="https://i.imgur.com/ofE8RHI.png" height="80%" width="80%" alt="Disk Sanitization Step"/>
 <!--
  ```diff
 - text in red
