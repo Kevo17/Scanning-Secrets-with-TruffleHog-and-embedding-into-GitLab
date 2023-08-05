@@ -63,8 +63,17 @@ trufflehog git https://gitlab.practical-devsecops.training/pdso/django.nv --json
 <br />
 <br />
 
+Let’s run the scan in GitLab in the YAML configuration file: <br/>
+```
+- docker run -v $(pwd):/src --rm hysnse/trufflehog --repo_path /src file:///src --json | tee trufflehog-output.json
+```
+<p align="center">
 <img src="https://i.imgur.com/Ev8n2Gh.png" height="80%" width="80%" alt="Disk Sanitization Step"/>
+</p>
+Here is the result of this job: <br/>
+<p align="center">
 <img src="https://i.imgur.com/ofE8RHI.png" height="80%" width="80%" alt="Disk Sanitization Step"/>
+</p>
 <!--
  ```diff
 - text in red
