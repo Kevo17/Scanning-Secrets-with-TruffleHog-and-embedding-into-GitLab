@@ -63,7 +63,7 @@ trufflehog git https://gitlab.practical-devsecops.training/pdso/django.nv --json
 <br />
 <br />
 
-Let’s run the scan in GitLab in the YAML configuration file: <br/>
+Let’s run the scan in GitLab in the YML configuration file: <br/>
 ```
 - docker run -v $(pwd):/src --rm hysnse/trufflehog --repo_path /src file:///src --json | tee trufflehog-output.json
 ```
